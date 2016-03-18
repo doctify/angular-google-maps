@@ -14,6 +14,7 @@ angular.module('uiGmapgoogle-maps.directives.api.options')
           icon: if defaults.icon? then defaults.icon else icon
 
       opts.map = map if map?
+      opts.zIndex = defaults.zIndex if defaults.zIndex?
       opts
 
     isLabel: (options) ->
