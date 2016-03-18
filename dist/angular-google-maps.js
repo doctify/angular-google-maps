@@ -3012,9 +3012,6 @@ Nicholas McCready - https://twitter.com/nmccready
           if (map != null) {
             opts.map = map;
           }
-          if (defaults.zIndex != null) {
-            opts.zIndex = defaults.zIndex;
-          }
           return opts;
         },
         isLabel: function(options) {
@@ -3649,6 +3646,7 @@ Original idea from: http://stackoverflow.com/questions/22758950/google-map-drawi
               icon = _this.getProp('icon', scope, _this.model);
               _options = _this.getProp('options', scope, _this.model);
               _this.opts = _this.createOptions(coords, icon, _options);
+              _this.opts.zIndex = _this.model.zIndex;
               if (_this.isLabel(_this.gObject) !== _this.isLabel(_this.opts) && (_this.gObject != null)) {
                 _this.gManager.remove(_this.gObject);
                 _this.gObject = void 0;
