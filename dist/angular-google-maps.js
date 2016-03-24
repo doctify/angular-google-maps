@@ -1,4 +1,4 @@
-/*! angular-google-maps 2.3.2 2016-03-18
+/*! angular-google-maps 2.3.2 2016-03-24
  *  AngularJS directives for Google Maps
  *  git: https://github.com/angular-ui/angular-google-maps.git
  */
@@ -15622,6 +15622,8 @@ angular.module('uiGmapgoogle-maps.extensions')
               var spriteV = parseInt(bp[1].trim(), 10);
               var pos = this.getPosFromLatLng_(this.center_);
               this.div_.style.cssText = this.createCss(pos);
+              // ensure that the protocol in the url_ matches that in the browser
+              this.url_ = this.url_.replace('http:', window.location.protocol);
               img = "<img src='" + this.url_ + "' style='position: absolute; top: " + spriteV + "px; left: " + spriteH + "px; ";
               if (!this.cluster_.getMarkerClusterer().enableRetinaIcons_) {
                 img += "clip: rect(" + (-1 * spriteV) + "px, " + ((-1 * spriteH) + this.width_) + "px, " +
